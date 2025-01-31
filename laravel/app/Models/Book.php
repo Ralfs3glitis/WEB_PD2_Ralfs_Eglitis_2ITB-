@@ -26,4 +26,18 @@ class Book extends Model
     {
         return $this->belongsTo(Genre::class);
     }
+    public function jsonSerialize(): array
+{
+    return [
+        'id' => intval($this->id),
+        'name' => $this->name,
+        'description' => $this->description,
+        'author' => $this->author->name,
+        'genre' => $this->genre->name,
+        'price' => number_format($this->price, 2),
+        'year' => intval($this->year),
+        'image' => asset('images/' . $this->image),
+    ];
+}
+
 }
