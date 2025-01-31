@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\DataController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -32,3 +33,7 @@ Route::post('/genres/put', [GenreController::class, 'put']);
 Route::get('/genres/update/{genre}', [GenreController::class, 'update']);
 Route::post('/genres/patch/{genre}', [GenreController::class, 'patch']);
 Route::post('/genres/delete/{genre}', [GenreController::class, 'delete']);
+
+Route::get('/data/get-top-books', [DataController::class, 'getTopBooks']);
+Route::get('/data/get-book/{book}', [DataController::class, 'getBook']);
+Route::get('/data/get-related-books/{book}', [DataController::class, 'getRelatedBooks']);
