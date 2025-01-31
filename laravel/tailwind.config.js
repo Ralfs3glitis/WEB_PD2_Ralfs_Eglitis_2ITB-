@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-      './resources/**/*.js',    // Existing line for JavaScript files
-      './resources/**/*.jsx',   // Added line for JSX files
+      './resources/**/*.js',   
+      './resources/**/*.jsx',  
       './resources/**/*.html', 
     ],
     theme: {
